@@ -1,5 +1,5 @@
 <?php
-require_once dirname(dirname(__FILE__)).'/lib/API/src/SkudlerAPI.php';
+require_once dirname(dirname(__FILE__)).'/lib/skudler-api/src/SkudlerAPI.php';
 
 class Skudler {
 

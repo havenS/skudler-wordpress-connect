@@ -1,0 +1,3 @@
+[submodule "skudler/lib/skudler-api"]
+	path = skudler/lib/skudler-api
+	url = https://github.com/havenS/skudler-api.git
