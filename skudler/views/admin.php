@@ -1,18 +1,3 @@
-<?php
-
-/**
- * Provide a admin area view for the plugin
- *
- * This file is used to markup the admin-facing aspects of the plugin.
- *
- * @link       http://www.inopale-web.fr/
- * @since      1.0.0
- *
- * @package    Ldm_Agenda
- * @subpackage Ldm_Agenda/admin/partials
- */
-?>
-
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <div id="skudler-settings" class="wrap">
     <h2>Skudler Settings</h2>
@@ -56,7 +41,7 @@
             <hr>
             <table class="form-table">
 
-                <tr valign="top" id="frequencyFields">
+                <tr valign="top">
                     <th scope="row">Enabled the plugin</th>
                     <td>
                         <input type="hidden" name="skudler_enabled" value="0">
@@ -69,16 +54,18 @@
                     <script type="text/javascript">
                         siteId = '<?php echo $options['skudler_site_id'];?>';
                     </script>
-                    <tr valign="top" id="siteFields">
-                        <th scope="row">Site ID</th>
-                        <td>
-                            <select name="skudler_site_id">
-                                <?php foreach($sites as $site){ ?>
-                                    <option value="<?php echo $site->_id;?>"<?php if($options['skudler_site_id'] == $site->_id) echo ' selected'; ?>><?php echo $site->name;?></option>
-                                <?php } ?>
-                            </select>
-                        </td>
-                    </tr>
+                    <?php if(is_array($sites)){ ?>
+                        <tr valign="top" id="siteFields">
+                            <th scope="row">Site ID</th>
+                            <td>
+                                <select name="skudler_site_id">
+                                    <?php foreach($sites as $site){ ?>
+                                        <option value="<?php echo $site->_id;?>"<?php if($options['skudler_site_id'] == $site->_id) echo ' selected'; ?>><?php echo $site->name;?></option>
+                                    <?php } ?>
+                                </select>
+                            </td>
+                        </tr>
+                    <?php } ?>
 
                     <?php if($events){ ?>
 

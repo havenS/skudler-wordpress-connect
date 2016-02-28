@@ -26,7 +26,7 @@ class SkudlerAdmin extends Skudler {
         wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . '../assets/css/admin.css', array(), $this->version, 'all' );
         wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . '../assets/js/admin.js', array( 'jquery' ), $this->version, false );
 
-        add_menu_page( 'Skudler API Configuration', 'Skudler', 'activate_plugins', 'skudler', array($this, 'displayAdminPage'), 'http://localhost:3000/packages/skudler_base/assets/images/logo-circle.png', 75);
+        add_menu_page( 'Skudler API Configuration', 'Skudler', 'activate_plugins', 'skudler', array($this, 'displayAdminPage'), plugin_dir_url( __DIR__ ) . 'assets/images/logo-circle.png', 75);
     }
 
     public function displayAdminPage()
